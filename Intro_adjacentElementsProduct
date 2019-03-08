@@ -1,0 +1,11 @@
+int adjacentElementsProduct(int[] inputArray) {
+    int MAX = -99999999;
+    int n = inputArray.length;
+    int tc;
+    for(int i = 0; i < n-1;i++)
+    {
+        tc = inputArray[i]*inputArray[i+1];
+        if(tc > MAX) MAX = tc;
+    }
+    return MAX;
+}
