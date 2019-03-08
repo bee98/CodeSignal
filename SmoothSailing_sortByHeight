@@ -1,0 +1,17 @@
+int[] sortByHeight(int[] a) {
+List<Integer> sorted = new ArrayList<Integer>();
+        for (int i = 0; i < a.length; ++i) {
+            if (a[i] > -1)
+                sorted.add(a[i]);
+        }
+        Integer[] s = {};
+        s = sorted.toArray(s);
+        Arrays.sort(s);
+        int j = 0;
+        for (int i = 0; i < a.length; ++i) {
+            if (a[i] > -1)
+                a[i] = s[j++];
+        }
+        return a;
+}
+
