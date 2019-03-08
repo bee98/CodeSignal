@@ -1,0 +1,16 @@
+boolean isLucky(int n) {
+
+    List<Integer> digits = new ArrayList<Integer>();
+        while (n > 0) {
+            int digit = n % 10;
+            n = n / 10;
+            digits.add(digit);
+        }
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int i = 0; i < digits.size() / 2; ++i) {
+            sum1 += digits.get(i);
+            sum2 += digits.get(digits.size() - i - 1);
+        }
+        return sum1 == sum2;
+}
