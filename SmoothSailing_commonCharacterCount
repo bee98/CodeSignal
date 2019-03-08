@@ -1,0 +1,22 @@
+int commonCharacterCount(String s1, String s2) {
+     List<String> chars = new ArrayList<String>();
+        List<Integer> indexes = new ArrayList<Integer>();
+        for (int i = 0; i < s1.length(); ++i) {
+            String ch = s1.substring(i, i + 1);
+            int startIdx = -1;
+            if (chars.contains(ch)) {
+                startIdx = chars.lastIndexOf(ch);
+                startIdx = indexes.get(startIdx);
+            }
+            if (startIdx + 1 < s2.length()) {
+                for (int j = startIdx + 1; j < s2.length(); ++j) {
+                    if (ch.equals(s2.substring(j, j + 1))) {
+                        chars.add(ch);
+                        indexes.add(j);
+                        break;
+                    }
+                }
+            }
+        }
+        return chars.size();
+}
