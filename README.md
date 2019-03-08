@@ -1,3 +1,3 @@
 # CodeSignal
-Java
-make by kaishin98
+@Java
+@make by kaishin98
