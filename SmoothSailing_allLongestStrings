@@ -1,0 +1,22 @@
+String[] allLongestStrings(String[] inputArray) {
+    List<String> longest = new LinkedList<String>();
+        int maxLength = 0;
+
+        for (String string : inputArray) {
+            int length = string.length();
+
+            if (length < maxLength) {
+                continue;
+            }
+
+            if (length > maxLength) {
+                maxLength = length;
+                longest.clear();
+            }
+
+            longest.add(string);
+        }
+
+        return longest.toArray(new String[longest.size()]);
+
+}
